@@ -4,7 +4,7 @@ USE Quackstagram;
 CREATE TABLE User (
     username VARCHAR(255) PRIMARY KEY,
     password VARCHAR(255) NOT NULL,
-    bio TEXT,
+    bio TEXT
 );
 
 CREATE TABLE Post (
@@ -23,7 +23,7 @@ CREATE TABLE Comment (
     content TEXT NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (post_id) REFERENCES Post(post_id) ON DELETE CASCADE,
-    FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE,
+    FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE
 );
 
 CREATE TABLE `Like` (
@@ -31,23 +31,24 @@ CREATE TABLE `Like` (
     username VARCHAR(255),
     PRIMARY KEY (post_id, username),
     FOREIGN KEY (post_id) REFERENCES Post(post_id) ON DELETE CASCADE,
-    FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE,
+    FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE
 );
 
 CREATE TABLE Follow (
-    notification_id INT AUTO_INCREMENT PRIMARY KEY,
-    recipient_id VARCHAR(255),
-    post_id INT,
-    notified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE,
-    FOREIGN KEY (post_id) REFERENCES Post(post_id) ON DELETE CASCADE,
+    follower_username VARCHAR(255),
+    followed_username VARCHAR(255),
+    FOREIGN KEY (follower_username) REFERENCES User(username) ON DELETE CASCADE,
+    FOREIGN KEY (followed_username) REFERENCES User(username) ON DELETE CASCADE
 );
 
 CREATE TABLE Notification (
-    
+    notification_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
+    post_id INT,
+    notified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (username) REFERENCES User(username) ON DELETE CASCADE,
+    FOREIGN KEY (post_id) REFERENCES Post(post_id) ON DELETE CASCADE
 );
-
-
 
 
 /* Populating the database */
@@ -81,6 +82,9 @@ INSERT INTO `Like` (post_id, username) VALUES
 (1, 'maastricht_student'),
 (2, 'ducky_coder');
 
-INSERT INTO Notification () VALUES 
+--Add dummy notification
+INSERT INTO Notification (post_id, username) VALUES 
+(1, 'maastricht_student'),
+(2, 'ducky_coder');
 
 
