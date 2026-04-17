@@ -37,6 +37,7 @@ CREATE TABLE `Like` (
 CREATE TABLE Follow (
     follower_username VARCHAR(255),
     followed_username VARCHAR(255),
+    PRIMARY KEY (follower_username, followed_username),
     FOREIGN KEY (follower_username) REFERENCES User(username) ON DELETE CASCADE,
     FOREIGN KEY (followed_username) REFERENCES User(username) ON DELETE CASCADE
 );
