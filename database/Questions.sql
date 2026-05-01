@@ -1,0 +1,22 @@
+-- 1. List all users who have more than X followers where X can be any integer
+-- value.
+-- 2. Show the total number of posts made by each user. (You will have to
+-- decide how this is done, via a username or userid)
+-- 3. Find all comments made on a particular user’s post.
+-- 4. Display the top X most liked posts.
+-- 5. Count the number of posts each user has liked.
+-- 6. List all users who haven’t made a post yet.
+-- 7. List users who follow each other.
+-- 8. Show the user with the highest number of posts.
+-- 9. List the top X users with the most followers.
+-- 10. Find posts that have been liked by all users.
+-- 11. Display the most active user (based on posts, comments 7, and likes).
+-- 12. Find the average number of likes per post for each user.
+-- 13. Show posts that have more comments than likes.
+-- 14. List the users who have liked every post of a specific user.
+-- 15. Display the most popular post of each user (based on likes).
+-- 16. Find the user(s) with the highest ratio of followers to following.
+-- 17. Show the month with the highest number of posts made.
+-- 18. Identify users who have not interacted with a specific user’s posts.
+-- 19. Display the user with the greatest increase in followers in the last X days.
+-- 20. Find users who are followed by more than X.
